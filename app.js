@@ -81,7 +81,7 @@ async function searchGif(key) {
   let searchTerm = gifSearchTerm.value.toString();
 
   try {
-    let res = await axios.get("http://api.giphy.com/v1/gifs/random", { params: { api_key: key, tag: searchTerm, rating: "g" } });
+    let res = await axios.get("https://api.giphy.com/v1/gifs/random", { params: { api_key: key, tag: searchTerm, rating: "g" } });
     let gifURL = res.data.data.images.fixed_height.url;
     let gif = document.createElement("img");
     gif.src = gifURL;
